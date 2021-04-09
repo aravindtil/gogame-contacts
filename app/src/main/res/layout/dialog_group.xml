@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.task.gogamecontacts.ui.main.viewmodel.GroupViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_dialog_bg"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="20dp"
+            android:text="@string/name"
+            android:textColor="@color/white_80"
+            android:textSize="@dimen/text_size_small" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:background="@drawable/edittext_bg"
+            android:hint="eg College"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:text="@={viewModel.group.name}"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_80"
+            android:textSize="@dimen/text_size_medium" />
+
+        <include
+            android:id="@+id/layout_buttons"
+            layout="@layout/layout_buttons" />
+
+    </LinearLayout>
+</layout>

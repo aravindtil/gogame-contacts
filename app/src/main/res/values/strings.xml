@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">GoGame Contacts</string>
+    <string name="new_contact">New Contact</string>
+    <string name="edit_contact">Edit Contact</string>
+    <string name="name">Name</string>
+    <string name="name_hint">eg John David</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="phone_number_hint">eg 98273 82612</string>
+    <string name="photo">Photo</string>
+    <string name="remove_photo">Remove Photo</string>
+    <string name="take_photo">Take photo</string>
+    <string name="choose_photo">Choose photo from Gallery</string>
+    <string name="storage_permission_denied">Please enable storage permission</string>
+    <string name="name_error">Please enter a valid name</string>
+    <string name="phone_error">Please enter a valid phone number</string>
+    <string name="contact_added">Contact Added</string>
+    <string name="contact_edited">Contact Edited</string>
+    <string name="contact_deleted">Contact Deleted</string>
+    <string name="favourite">Favourite</string>
+    <string name="unfavourite">Unfavourite</string>
+    <string name="delete">Delete</string>
+    <string name="my_groups">My Groups</string>
+    <string name="group_added">Group Added</string>
+    <string name="group_edited">Group Edited</string>
+    <string name="group_deleted">Group Deleted</string>
+    <string name="all_contacts">All Contacts</string>
+    <string name="favourites">Favourites</string>
+    <string name="no_contacts">No Contacts Found</string>
+    <string name="no_groups">No Groups Found</string>
+    <string name="no_group_members">No Group Members</string>
+    <string name="no_fav_contacts">No Favourite Contacts</string>
+    <string name="group_name">%s Group</string>
+    <string name="add_remove">Add / Remove</string>
+    <string name="rename">Rename</string>
+    <string name="edit">Edit</string>
+    <string name="assign_contacts">Assign favourite contacts to %s group</string>
+    <string name="dup_contact">Contact with the phone number already exists!</string>
+    <string name="dup_group">Group with the name already exists</string>
+    <string name="group_count">%1$d People(s)</string>
+
+    <string-array name="picture_actions_1">
+        <item>@string/remove_photo</item>
+        <item>@string/take_photo</item>
+        <item>@string/choose_photo</item>
+    </string-array>
+
+    <string-array name="picture_actions_2">
+        <item>@string/take_photo</item>
+        <item>@string/choose_photo</item>
+    </string-array>
+    <string-array name="letters">
+        <item>a</item>
+        <item>b</item>
+        <item>c</item>
+        <item>d</item>
+        <item>e</item>
+        <item>f</item>
+        <item>g</item>
+        <item>h</item>
+        <item>i</item>
+        <item>j</item>
+        <item>k</item>
+        <item>l</item>
+        <item>m</item>
+        <item>n</item>
+        <item>o</item>
+        <item>p</item>
+        <item>q</item>
+        <item>r</item>
+        <item>s</item>
+        <item>t</item>
+        <item>u</item>
+        <item>v</item>
+        <item>w</item>
+        <item>x</item>
+        <item>y</item>
+        <item>z</item>
+    </string-array>
+</resources>

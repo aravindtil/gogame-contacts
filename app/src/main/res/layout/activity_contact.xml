@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="contactId"
+            type="Integer" />
+        <variable
+            name="viewModel"
+            type="com.task.gogamecontacts.ui.main.viewmodel.ContactViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.main.view.ContactActivity">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/close"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="@dimen/fab_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_close" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/save"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="@dimen/fab_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_tick" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/top_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{contactId == -1 ? @string/new_contact : @string/edit_contact}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/close"
+                app:layout_constraintEnd_toStartOf="@id/save"
+                app:layout_constraintStart_toEndOf="@id/close"
+                app:layout_constraintTop_toTopOf="@id/close" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/profile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="50dp"
+                app:imageUrl="@{viewModel.contact.profilePicture}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_text"
+                app:placeHolder="@{@drawable/ic_profile}"
+                app:srcCompat="@drawable/ic_profile" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fab_margin"
+                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginTop="20dp"
+                android:text="@string/name"
+                android:textColor="@color/white_80"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/fab_margin"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/name_hint"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:maxEms="30"
+                android:nextFocusDown="@id/phone_number"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:text="@={viewModel.contact.name}"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white_80"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fab_margin"
+                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginTop="20dp"
+                android:text="@string/phone_number"
+                android:textColor="@color/white_80"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/fab_margin"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:background="@drawable/edittext_bg"
+                android:hint="@string/phone_number_hint"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:text="@={viewModel.contact.phoneNumber}"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white_80"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/layout_bottom_bar"
+            layout="@layout/layout_bottom_bar_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            bind:contactId="@{contactId}"
+            android:layout_alignParentBottom="true"
+            bind:viewModel="@{viewModel}" />
+    </RelativeLayout>
+</layout>

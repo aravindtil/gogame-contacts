@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="contactId"
+            type="Integer" />
+        <variable
+            name="viewModel"
+            type="com.task.gogamecontacts.ui.main.viewmodel.ContactViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1f1f1f"
+        android:gravity="center"
+        android:padding="@dimen/fab_margin">
+
+        <CheckBox
+            android:id="@+id/fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:checked="@={viewModel.contact.favourite}"
+            android:drawableTop="@drawable/fav_selector"
+            android:gravity="center"
+            android:text="@{viewModel.contact.favourite ? @string/unfavourite : @string/favourite}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_toEndOf="@id/fav"
+            android:layout_toRightOf="@id/fav"
+            android:drawableTop="@drawable/ic_delete"
+            android:text="@string/delete"
+            android:textColor="@color/white"
+            android:visibility="@{contactId == -1 ? View.GONE : View.VISIBLE}"
+            android:textSize="@dimen/text_size_small" />
+
+
+    </RelativeLayout>
+</layout>
